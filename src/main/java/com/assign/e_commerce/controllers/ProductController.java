@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/v1")
+@RequestMapping("/products")
 public class ProductController {
 
     private final ProductService productService;
@@ -18,14 +18,16 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping("/products")
+    @GetMapping
     public ResponseEntity<List<ProductDTO>> getAllProducts(@RequestParam(required = false) String search) {
-        return ResponseEntity.ok(productService.getAllProducts(search));
+        List<ProductDTO> products = productService.getAllProducts(search);
+        return ResponseEntity.ok(products);
     }
 
+    // GET /products/{id} — Get product details by ID
     @GetMapping("/{id}")
     public ResponseEntity<ProductDTO> getProductById(@PathVariable UUID id) {
-        return ResponseEntity.ok(productService.getProductById(id));
+        ProductDTO product = productService.getProductById(id);
+        return ResponseEntity.ok(product);
     }
-
 }
