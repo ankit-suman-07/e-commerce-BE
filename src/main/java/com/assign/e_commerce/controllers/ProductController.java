@@ -1,11 +1,16 @@
 package com.assign.e_commerce.controllers;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.assign.e_commerce.dto.ProductDTO;
+import com.assign.e_commerce.service.ProductService;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/v1")
-public class NotesController {
+public class ProductController {
 
     private final ProductService productService;
 

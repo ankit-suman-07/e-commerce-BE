@@ -1,6 +1,13 @@
 package com.assign.e_commerce.service;
 
+import com.assign.e_commerce.dto.ProductDTO;
+import com.assign.e_commerce.entities.ProductEntity;
+import com.assign.e_commerce.repository.ProductRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductService {

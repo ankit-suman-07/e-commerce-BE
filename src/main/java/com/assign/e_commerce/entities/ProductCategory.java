@@ -1,0 +1,7 @@
+package com.assign.e_commerce.entities;
+
+public enum ProductCategory {
+    ELECTRONICS,
+    FASHION,
+    BOOKS
+}
