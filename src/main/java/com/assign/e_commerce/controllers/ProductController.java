@@ -18,7 +18,7 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping
+    @GetMapping("/products")
     public ResponseEntity<List<ProductDTO>> getAllProducts(@RequestParam(required = false) String search) {
         return ResponseEntity.ok(productService.getAllProducts(search));
     }
