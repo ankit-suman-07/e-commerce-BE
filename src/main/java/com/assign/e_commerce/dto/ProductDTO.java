@@ -13,7 +13,7 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 public class ProductDTO {
-    private UUID id;
+    private Long id;
     private String name;
     private String description;
     private BigDecimal price;
