@@ -1,11 +1,14 @@
 package com.assign.e_commerce.controllers;
 
 import com.assign.e_commerce.dto.ProductDTO;
+import com.assign.e_commerce.entities.ProductCategory;
 import com.assign.e_commerce.service.ProductService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.UUID;
 
 @RestController
@@ -23,6 +26,15 @@ public class ProductController {
         List<ProductDTO> products = productService.getAllProducts(search);
         return ResponseEntity.ok(products);
     }
+
+    @GetMapping("/categories")
+    public ResponseEntity<List<String>> getAllCategories() {
+        List<String> categories = Arrays.stream(ProductCategory.values())
+                .map(Enum::name)
+                .toList();
+        return ResponseEntity.ok(categories);
+    }
+
 
     // GET /products/{id} — Get product details by ID
     @GetMapping("/{id}")

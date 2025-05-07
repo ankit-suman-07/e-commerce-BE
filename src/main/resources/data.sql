@@ -1,10 +1,10 @@
 -- Insert sample products
 INSERT INTO products (id, name, description, price, brand, category, image_url)
-SELECT * FROM (SELECT 1, 'Laptop', 'High-performance laptop with 16GB RAM and 512GB SSD.', 999.99, 'TechBrand', 'ELECTRONICS', 'https://example.com/laptop.jpg' UNION ALL
-               SELECT 2, 'Smartphone', 'Latest smartphone with 128GB storage and 6GB RAM.', 799.99, 'PhoneCo', 'ELECTRONICS', 'https://example.com/smartphone.jpg' UNION ALL
-               SELECT 3, 'T-Shirt', 'Comfortable cotton T-shirt in various sizes.', 19.99, 'StyleBrand', 'FASHION', 'https://example.com/tshirt.jpg' UNION ALL
-               SELECT 4, 'Jeans', 'Classic denim jeans for all occasions.', 49.99, 'StyleCo', 'FASHION', 'https://example.com/jeans.jpg' UNION ALL
-               SELECT 5, 'The Great Gatsby', 'A novel by F. Scott Fitzgerald.', 10.99, 'Penguin', 'BOOKS', 'https://example.com/gatsby.jpg') AS temp
+SELECT * FROM (SELECT 1, 'Laptop', 'High-performance laptop with 16GB RAM and 512GB SSD.', 999.99, 'TechBrand', 'ELECTRONICS', 'https://picsum.photos/200' UNION ALL
+               SELECT 2, 'Smartphone', 'Latest smartphone with 128GB storage and 6GB RAM.', 799.99, 'PhoneCo', 'ELECTRONICS', 'https://picsum.photos/200' UNION ALL
+               SELECT 3, 'T-Shirt', 'Comfortable cotton T-shirt in various sizes.', 19.99, 'StyleBrand', 'FASHION', 'https://picsum.photos/200' UNION ALL
+               SELECT 4, 'Jeans', 'Classic denim jeans for all occasions.', 49.99, 'StyleCo', 'FASHION', 'https://picsum.photos/200' UNION ALL
+               SELECT 5, 'The Great Gatsby', 'A novel by F. Scott Fitzgerald.', 10.99, 'Penguin', 'BOOKS', 'https://picsum.photos/200') AS temp
 WHERE NOT EXISTS (SELECT 1 FROM products);
 
 
