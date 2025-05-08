@@ -1,5 +1,5 @@
-CREATE TABLE products (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS products (
+    id UUID PRIMARY KEY DEFAULT RANDOM_UUID(),
     name VARCHAR(255),
     description TEXT,
     price DOUBLE,

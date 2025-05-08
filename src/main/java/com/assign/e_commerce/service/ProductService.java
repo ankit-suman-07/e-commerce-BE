@@ -25,7 +25,7 @@ public class ProductService {
         return entities.stream().map(this::toDTO).collect(Collectors.toList());
     }
 
-    public ProductDTO getProductById(Long id) {
+    public ProductDTO getProductById(UUID id) {
         return productRepository.findById(id).map(this::toDTO)
                 .orElseThrow(() -> new RuntimeException("Product not found"));
     }
